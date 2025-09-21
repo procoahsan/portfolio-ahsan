@@ -31,7 +31,7 @@ const About = () => {
           description="Passionate Full Stack Engineer with expertise in modern web technologies, AI integration, and scalable application development."
         />
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-6 animate-fade-in-up">
             <div className="space-y-4">
@@ -52,16 +52,16 @@ const About = () => {
               </p>
             </div>
 
-            <div className="flex items-center space-x-6">
-              <div className="text-center">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-6">
+              <div className="text-center min-w-[100px]">
                 <div className="text-3xl font-bold text-primary">40+</div>
                 <div className="text-sm text-muted-foreground">Projects Completed</div>
               </div>
-              <div className="text-center">
+              <div className="text-center min-w-[100px]">
                 <div className="text-3xl font-bold text-primary">3+</div>
                 <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
-              <div className="text-center">
+              <div className="text-center min-w-[100px]">
                 <div className="text-3xl font-bold text-primary">15+</div>
                 <div className="text-sm text-muted-foreground">Technologies</div>
               </div>
@@ -84,12 +84,12 @@ const About = () => {
                           href={info.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-primary hover:underline"
+                          className="text-primary hover:underline break-all"
                         >
                           {info.value}
                         </a>
                       ) : (
-                        <div className="font-medium">{info.value}</div>
+                        <div className="font-medium break-all">{info.value}</div>
                       )}
                     </div>
                   </div>
@@ -106,12 +106,12 @@ const About = () => {
           </div>
           
           <Card className="max-w-4xl mx-auto group hover:shadow-xl transition-all duration-300 border-border/50 hover:border-primary/20 animate-scale-in">
-            <CardContent className="p-8">
-              <div className="flex items-start space-x-6">
-                <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+            <CardContent className="p-6 md:p-8">
+              <div className="flex flex-col md:flex-row items-start space-y-6 md:space-y-0 md:space-x-6">
+                <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300 self-center md:self-auto">
                   <Award className="h-8 w-8 text-primary" />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 text-center md:text-left">
                   <Badge variant="outline" className="mb-4">2019 - 2023</Badge>
                   <h4 className="text-xl font-semibold mb-2">Bachelor of Science in Software Engineering</h4>
                   <p className="text-primary font-medium mb-4">COMSATS University Islamabad</p>
