@@ -30,9 +30,9 @@ const Contact = () => {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   useEffect(() => {
-    if (import.meta.env.NEXT_EMAILJS_PUBLIC_KEY) {
+    if (import.meta.env.VITE_EMAILJS_PUBLIC_KEY) {
       emailjs.init({
-        publicKey: import.meta.env.NEXT_EMAILJS_PUBLIC_KEY,
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       });
     }
   }, []);
@@ -86,7 +86,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!import.meta.env.NEXT_EMAILJS_SERVICE_ID || !import.meta.env.NEXT_EMAILJS_TEMPLATE_ID || !import.meta.env.NEXT_EMAILJS_PUBLIC_KEY) {
+    if (!import.meta.env.VITE_EMAILJS_SERVICE_ID || !import.meta.env.VITE_EMAILJS_TEMPLATE_ID || !import.meta.env.VITE_EMAILJS_PUBLIC_KEY) {
       toast({
         title: "Error",
         description: "Configuration error. Please contact the site owner.",
@@ -97,10 +97,10 @@ const Contact = () => {
     
     emailjs
       .sendForm(
-        import.meta.env.NEXT_EMAILJS_SERVICE_ID,
-        import.meta.env.NEXT_EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         e.target as HTMLFormElement,
-        import.meta.env.NEXT_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
